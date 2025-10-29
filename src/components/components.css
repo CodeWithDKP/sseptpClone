@@ -1,0 +1,267 @@
+
+/* --- Fixed logo before scrolling --- */
+.logo-fixed {
+  position: fixed;
+  top: 10px;
+  left: 90px;
+  z-index: 1000;
+  transition: all 0.6s ease;
+  margin-left: 100px;
+}
+
+.logo-fixed img {
+  height: 35px;
+  transition: all 0.6s ease;
+}
+
+/* When scrolled, logo becomes smaller */
+.logo-fixed.logo-small img {
+  height: 30px;
+  transform: translateY(8px);
+}
+
+/* --- Sticky Navbar --- */
+.navbar-container {
+  position: fixed;
+  top: -80px; /* hidden initially */
+  width: 100%;
+  background-color: #16307c;
+  padding: 10px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: top 0.6s ease, opacity 0.6s ease;
+  z-index: 999;
+  padding: 30px;
+}
+
+/* When scrolled, navbar fades in */
+.navbar-container.show-navbar {
+  top: 0;
+  opacity: 1;
+}
+
+/* Navbar content */
+.navbar-logo {
+  height: auto;
+  opacity: 0.95;
+  margin-left: 100px;
+}
+
+/*Footer*/
+.sse-footer {
+  background: #2d2f33;
+  color: #ddd;
+  padding: 60px 0 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.sse-footer h5,
+.sse-footer h6 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer-line {
+  width: 40px;
+  height: 3px;
+  background: #f9843d;
+  margin-bottom: 15px;
+  border-radius: 3px;
+}
+
+.footer-about p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+
+.footer-contact svg {
+  color: #f9843d;
+  margin-top: 3px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block; /* important for smooth transform */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links li:hover a {
+  color: #f9843d;
+  transform: translateY(-4px);
+}
+
+
+.footer-social {
+  margin-top: 15px;
+}
+
+.footer-social a {
+  color: #ddd;
+  margin-right: 12px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #f9843d;
+}
+
+hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: 30px 0;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #bbb;
+  margin: 0;
+}
+/* small screens*/
+/* ============================= */
+/* 🔹 Responsive Design Section  */
+/* ============================= */
+
+/* --- Medium screens (laptops & tablets) --- */
+@media (max-width: 1024px) {
+  /* Logo */
+  .logo-fixed {
+    left: 50px;
+    margin-left: 0;
+  }
+
+  .logo-fixed img {
+    height: 32px;
+  }
+
+  /* Navbar */
+  .navbar-container {
+    padding: 20px;
+  }
+
+  .navbar-logo {
+    margin-left: 50px;
+  }
+
+  /* Footer */
+  .sse-footer {
+    padding: 50px 20px;
+  }
+
+  .footer-about p {
+    font-size: 13px;
+  }
+}
+
+/* --- Tablets (portrait) --- */
+@media (max-width: 768px) {
+  /* Logo */
+  .logo-fixed {
+    left: 30px;
+  }
+
+  .logo-fixed img {
+    height: 30px;
+  }
+
+  /* Navbar */
+  .navbar-container {
+    padding: 15px;
+  }
+
+  .navbar-logo {
+    margin-left: 30px;
+  }
+
+  /* Footer */
+  .sse-footer {
+    text-align: center;
+  }
+
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    margin-bottom: 30px;
+  }
+
+  .footer-contact li {
+    justify-content: center;
+  }
+
+  .footer-social {
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+}
+
+/* --- Mobile screens --- */
+@media (max-width: 480px) {
+  /* Fixed Logo */
+  .logo-fixed {
+    top: 5px;
+    left: 20px;
+  }
+
+  .logo-fixed img {
+    height: 28px;
+  }
+
+  /* Navbar */
+  .navbar-container {
+    padding: 20px 10px;
+  }
+
+  .navbar-logo {
+    margin-left: 10px;
+    width: 100px;
+  }
+
+  /* Footer */
+  .sse-footer {
+    padding: 40px 15px 10px;
+  }
+
+  .footer-about p,
+  .footer-links a,
+  .footer-contact li {
+    font-size: 12px;
+  }
+
+  .footer-social a {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  .footer-bottom p {
+    font-size: 11px;
+  }
+}
